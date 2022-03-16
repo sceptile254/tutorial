@@ -1,0 +1,14 @@
+<h1>ユーザー一覧</h1>
+
+<!--usersコントローラーのindexアクションにより、
+Userモデルのすべてのレコードが格納された@usersをもとに繰り返し処理を行う-->
+<!--link_to...aリンクを作るメソッド-->
+<% @users.each do |user| %>
+  <%= link_to user.name, user_path(id: user.id) %><br>
+  <!--名前_path...そのルーティングへのURLを自動的に生成-->
+  <!-- user =
+  get '/users/:id' to: 'users#show' -->
+  <!--(id: user.id)
+  urlのidの部分は、
+  userのidを使って下さいという指定-->
+<% end %>
